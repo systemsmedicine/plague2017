@@ -3,8 +3,8 @@
 # Nishiura, H. (2010). Correcting the Actual Reproduction Number: A Simple Method to Estimate R0 from Early Epidemic Growth Data. International Journal of Environmental Research and Public Health, 7(1), 291–302. http://doi.org/10.3390/ijerph7010291
 # -------------------------------------------------------------------------
 R0_epidemic <- function(.dat=y, .gen.time=genTime, init=2, lo=1.01, ...) {
-  require('stats4')
-  names(.dat) <- 1:length(.dat)
+	require('stats4')
+	names(.dat) <- 1:length(.dat)
 	# -----------------------------------------------------------------------
 	# Calculate the total number of effective contacts made by potential primary cases in time t that have an equal probability of resulting in a secondary transmission, 
 	# 
@@ -12,8 +12,8 @@ R0_epidemic <- function(.dat=y, .gen.time=genTime, init=2, lo=1.01, ...) {
 	# -----------------------------------------------------------------------
 	f_mat <- function(x) .dat[which(names(.dat)==x)]
 	f_sum <- function(x) {
-    ylist <- sapply(x-genTime$time, f_mat)
-    return(sum(unlist(Map(`*`, ylist,  genTime$GT))))
+		ylist <- sapply(x-genTime$time, f_mat)
+		return(sum(unlist(Map(`*`, ylist,  genTime$GT))))
 	}
 	# Negative log likelihood of Binomial distribution
 	# -----------------------------------------------------------------------
