@@ -33,7 +33,7 @@ y <- c(1, 3, 6, 3, 5, 9, 7, 20, 25, 39, 53, 61)
 # Use the same discrete generation time gamma(5.4, 0.9)
 genTime <- generation.time("gamma", c(5.4, 0.9))
 # Run 
-R0_epidemic(y, genTime, init=1.5, lo=1.001)
+R0_Nishiura(y, genTime, init=1.5, lo=1.001)
 # Profiling...
 #       R0    2.5 %   97.5 % 
 # 6.984100 5.206784 9.791975 
