@@ -33,4 +33,9 @@ y <- c(1, 3, 6, 3, 5, 9, 7, 20, 25, 39, 53, 61)
 # Use the same discrete generation time gamma(5.4, 0.9)
 genTime <- generation.time("gamma", c(5.4, 0.9))
 # Run 
-R0_Viboud_Chowell(y, genTime, init=c(r=1, p=.5), lo=1e-8, up=c(1e+2, 1))
+out <- R0_Viboud_Chowell(y, genTime, init=c(r=1, p=.5), lo=1e-8, up=c(1e+2, 1))
+# > round(out, 2)
+#            2            3            4            5            6            7 
+# 8.947769e+09 8.131145e+04 3.565600e+02 2.821000e+01 9.960000e+00 7.070000e+00 
+#            8            9           10           11           12 
+# 6.340000e+00 5.970000e+00 5.660000e+00 5.390000e+00 5.150000e+00 
