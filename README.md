@@ -36,5 +36,7 @@ R0_Viboud_Chowell(y, genTime, init=c(r=1, p=.5), lo=1e-8, up=c(1e+2, 1))
 [Stochastic simulation](https://github.com/systemsmedicine/plague2017/blob/master/plague.ipynb)
 
 [^1]: Viboud, C., Simonsen, L., & Chowell, G. (2016). A generalized-growth model to characterize the early ascending phase of infectious disease outbreaks. Epidemics, 15, 27–37. http://doi.org/10.1016/j.epidem.2016.01.002
+
 [^2]: Chowell, G., Viboud, C., Simonsen, L., & Moghadas, S. M. (2016). Characterizing the reproduction number of epidemics with early subexponential growth dynamics. Journal of the Royal Society Interface, 13(123), 20160659. http://doi.org/10.1098/rsif.2016.0659
+
 [^3]: Nishiura, H. (2010). Correcting the Actual Reproduction Number: A Simple Method to Estimate R0 from Early Epidemic Growth Data. International Journal of Environmental Research and Public Health, 7(1), 291–302. http://doi.org/10.3390/ijerph7010291
