@@ -24,7 +24,7 @@ R0_Viboud_Chowell <- function(.dat=y, .gen.time=genTime, init=c(r=1, p=.5), lo=1
 		return(sum(unlist(Map(`*`, ylist,  genTime$GT))))
 	}
 	f_Rt <- function(x) yhat[x]/f_sum(x)
-	return(sapply(seq_along(yhat), f_Rt)[-1]) # exclude day 1 (Inf R0)
+	return(list(r=coef(modNLS)['r'], p=coef(modNLS)['p'], Rt=sapply(seq_along(yhat), f_Rt)[-1])) # exclude day 1 (Inf R0)
 }
 # Example
 # -------------------------------------------------------------------------
@@ -34,8 +34,17 @@ y <- c(1, 3, 6, 3, 5, 9, 7, 20, 25, 39, 53, 61)
 genTime <- generation.time("gamma", c(5.4, 0.9))
 # Run 
 out <- R0_Viboud_Chowell(y, genTime, init=c(r=1, p=.5), lo=1e-8, up=c(1e+2, 1))
-# > round(out, 2)
+# > out
+# $r
+#         r 
+# 0.4228841 
+
+# $p
+#         p 
+# 0.9085438 
+
+# $Rt
 #            2            3            4            5            6            7 
-# 8.947769e+09 8.131145e+04 3.565600e+02 2.821000e+01 9.960000e+00 7.070000e+00 
+# 8.947769e+09 8.131145e+04 3.565584e+02 2.820609e+01 9.957149e+00 7.068513e+00 
 #            8            9           10           11           12 
-# 6.340000e+00 5.970000e+00 5.660000e+00 5.390000e+00 5.150000e+00 
+# 6.342856e+00 5.970402e+00 5.664230e+00 5.391341e+00 5.145617e+00 
